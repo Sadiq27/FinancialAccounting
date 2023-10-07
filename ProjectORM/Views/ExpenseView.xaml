@@ -1,0 +1,39 @@
+﻿<UserControl x:Class="ProjectORM.Views.ExpenseView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ProjectORM.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800" Background="White" Opacity="0.9">
+    <Grid>
+        <StackPanel Margin="20" Width="350">
+            <TextBlock Text="Expense page" FontSize="20" FontWeight="Bold" Margin="10" HorizontalAlignment="Center" />
+            
+            <TextBlock Text="Expense Name" Margin="0 0 0 10"/>
+            <TextBox Text="{Binding ExpenseName}" Margin="0 0 0 10"/>
+
+            <TextBlock Text="Categories" Margin="0 0 0 10"/>
+            <ComboBox SelectedItem="{Binding SelectedCategory}" ItemsSource="{Binding ExpenseCategories}" Margin="0 0 0 10">
+
+            </ComboBox>
+
+            <TextBlock Text="Amount" Margin="0 0 0 10"/>
+            <TextBox Text="{Binding Amount}" Margin="0 0 0 10"/>
+
+            <TextBlock Text="Date" Margin="0 0 0 10"/>
+            <DatePicker SelectedDate="{Binding SelectedDate}" Margin="0 0 0 10"/>
+
+            <TextBlock Text="Description" Margin="0 0 0 10"/>
+            <RichTextBox Margin="0 0 0 10" Height="50">
+                <FlowDocument>
+                    <Paragraph>
+                        <Run Text="{Binding Description}" />
+                    </Paragraph>
+                </FlowDocument>
+            </RichTextBox>
+
+            <Button Content="Save Expense" Command="{Binding SaveExpenseCommand}" HorizontalAlignment="Center"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

@@ -1,0 +1,90 @@
+﻿<UserControl x:Class="ProjectORM.Views.DashboardView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ProjectORM.Views"
+             mc:Ignorable="d" 
+             Foreground="white"
+             FontWeight="Bold"
+             d:DesignHeight="450" d:DesignWidth="800" Background="White" Opacity="0.9">
+    <DockPanel>
+        <StackPanel DockPanel.Dock="Left" Orientation="Vertical" Width="300">
+            <Border Background="Green" Height="200" Margin="12.5">
+                <StackPanel>
+                    <TextBlock Text="Total Income" FontSize="18" Padding="10"/>
+                    <TextBlock Text="{Binding TotalIncome}" FontSize="24" Padding="10"/>
+                    <TextBlock Text="Transactions" FontSize="18" Padding="10"/>
+                    <TextBlock Text="{Binding TotalIncomeTransactionsCount}" FontSize="24" Padding="10"/>
+                </StackPanel>
+            </Border>
+            <Border Background="#ff0000" Height="200" Margin="12.5">
+                <StackPanel>
+                    <TextBlock Text="Total Expense" FontSize="18" Padding="10"/>
+                    <TextBlock Text="{Binding TotalExpense}" FontSize="24" Padding="10"/>
+                    <TextBlock Text="Transactions" FontSize="18" Padding="10"/>
+                    <TextBlock Text="{Binding TotalExpenseTransactionsCount}" FontSize="24" Padding="10"/>
+                </StackPanel>
+            </Border>
+        </StackPanel>
+
+        <StackPanel DockPanel.Dock="Right" Orientation="Vertical" Width="350">
+            <StackPanel Orientation="Horizontal">
+                <Border Background="#265C00" Width="150" Height="89" Margin="12">
+                    <StackPanel>
+                        <TextBlock Text="Maximum Income" FontSize="14" Padding="10"/>
+                        <TextBlock Text="{Binding MaximumIncome}" FontSize="24" Padding="10"/>
+                    </StackPanel>
+                </Border>
+                <Border Background="#265C00" Width="150" Height="89" Margin="12">
+                    <StackPanel>
+                        <TextBlock Text="Minimum Income" FontSize="14" Padding="10"/>
+                        <TextBlock Text="{Binding MinimumIncome}" FontSize="24" Padding="10"/>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Border Background="#699926" Width="150" Height="89" Margin="12">
+                    <StackPanel>
+                        <TextBlock Text="Maximum Expense" FontSize="14" Padding="10"/>
+                        <TextBlock Text="{Binding MaximumExpense}" FontSize="24" Padding="10"/>
+                    </StackPanel>
+                </Border>
+                <Border Background="#699926" Width="150" Height="89" Margin="12">
+                    <StackPanel>
+                        <TextBlock Text="Minimum Expense" FontSize="14" Padding="10"/>
+                        <TextBlock Text="{Binding MinimumExpense}" FontSize="24" Padding="10"/>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Border Background="#C28B00" Width="150" Height="89" Margin="12">
+                    <StackPanel>
+                        <TextBlock Text="Balance" FontSize="14" Padding="10"/>
+                        <TextBlock Text="{Binding Balance}" FontSize="24" Padding="10"/>
+                    </StackPanel>
+                </Border>
+                <Border Background="#C28B00" Width="150" Height="89" Margin="12">
+                    <StackPanel>
+                        <TextBlock Text="Best Income Category" FontSize="13" Padding="10"/>
+                        <TextBlock Text="{Binding BestIncomeCategory}" FontSize="24" Padding="10"/>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Border Background="#C8AB00" Width="150" Height="89" Margin="12">
+                    <StackPanel>
+                        <TextBlock Text="Last Expense" FontSize="14" Padding="8"/>
+                        <TextBlock Text="{Binding LastExpense, StringFormat={}{0:dd/MM/yyyy}}" FontSize="24" Padding="10"/>
+                    </StackPanel>
+                </Border>
+                <Border Background="#C8AB00" Width="150" Height="89" Margin="12">
+                    <StackPanel>
+                        <TextBlock Text="Last Income" FontSize="14" Padding="10"/>
+                        <TextBlock Text="{Binding LastIncome, StringFormat={}{0:dd/MM/yyyy}}" FontSize="24" Padding="10"/>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </StackPanel>
+    </DockPanel>
+</UserControl>

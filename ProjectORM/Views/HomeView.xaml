@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="ProjectORM.Views.HomeView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ProjectORM.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="900" Background="White" Opacity="0.9">
+    <DockPanel>
+
+        <DockPanel.Background>
+            <ImageBrush ImageSource="https://static.mvideo.ru/media/Promotions/Promo_Page/2022/March/obzor-10-prilozhenij-dlya-ucheta-finansov-i-vedeniya-semejnogo-byudzheta/obzor-10-prilozhenij-dlya-ucheta-finansov-i-vedeniya-semejnogo-byudzheta-top1-m.png" Stretch="UniformToFill" />
+        </DockPanel.Background>
+
+
+        <StackPanel Width="120" DockPanel.Dock="Left" Margin="10 60">
+            <Button Content="Dashboard" Command="{Binding DashboardCommand}" Margin="0 10"/>
+            <Button Content="Income" Command="{Binding IncomeCommand}" Margin="0 10"/>
+            <Button Content="Expense" Command="{Binding ExpenseCommand}" Margin="0 10"/>
+            <Button Content="View Income" Command="{Binding ViewIncomeCommand}" Margin="0 10"/>
+            <Button Content="View Expense" Command="{Binding ViewExpenseCommand}" Margin="0 10"/>
+        </StackPanel>
+
+        <ContentControl Margin="10" DockPanel.Dock="Right" Content="{Binding ActiveSubViewModel}">
+
+        </ContentControl>
+
+    </DockPanel>
+</UserControl>

@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="ProjectORM.Views.ExpenseHistoryView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ProjectORM.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="700" Background="White" Opacity="0.9">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Expense History" FontSize="24" FontWeight="Bold" Margin="10" VerticalAlignment="Center" />
+
+        <ListView Grid.Row="1" ItemsSource="{Binding ExpenseHistory}" Margin="10">
+            <ListView.Resources>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="HorizontalContentAlignment" Value="Center" />
+                </Style>
+            </ListView.Resources>
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Expense Name" Width="140" DisplayMemberBinding="{Binding Name}" />
+                    <GridViewColumn Header="Category" Width="140" DisplayMemberBinding="{Binding Category}" />
+                    <GridViewColumn Header="Amount" Width="120" DisplayMemberBinding="{Binding Amount}" />
+                    <GridViewColumn Header="Date" Width="120" DisplayMemberBinding="{Binding TransactionDate, StringFormat={}{0:dd/MM/yyyy}}" />
+                    <GridViewColumn Header="Description" Width="140" DisplayMemberBinding="{Binding Description}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</UserControl>
