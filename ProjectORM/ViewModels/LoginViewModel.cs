@@ -54,7 +54,6 @@ namespace ProjectORM.ViewModels
 
                     if (user != null)
                     {
-                        MessageBox.Show("Successful login");
                         this.messenger.Send(new NavigationMessage(App.Container.GetInstance<HomeViewModel>()));
                     }
                     else
@@ -77,6 +76,24 @@ namespace ProjectORM.ViewModels
                 {
                     try
                     {
+                        if (string.IsNullOrWhiteSpace(Username))
+                        {
+                            MessageBox.Show("Username is required.");
+                            return;
+                        }
+
+                        if (string.IsNullOrWhiteSpace(Password))
+                        {
+                            MessageBox.Show("Password is required.");
+                            return;
+                        }
+
+                        if (Password.Length < 8)
+                        {
+                            MessageBox.Show("Password must be at least 8 characters long.");
+                            return;
+                        }
+
                         this.userRepository.AddUser(new User()
                         {
                             Username = this.Username,
@@ -94,7 +111,7 @@ namespace ProjectORM.ViewModels
                 },
                 canExecute: () => true
             );
-
+        
         public LoginViewModel(IUserRepository userRepository, IMessenger messenger)
         {
             this.userRepository = userRepository;
